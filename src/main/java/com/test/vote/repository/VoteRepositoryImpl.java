@@ -13,7 +13,7 @@ public class VoteRepositoryImpl {
 
 	private final MongoOperations mongoOperations;
 	@Autowired
-	public VoteRepositoryImpl(MongoOperations mongoOperations) {
+	public VoteRepositoryImpl(final MongoOperations mongoOperations) {
 		this.mongoOperations = mongoOperations;
 	}
 

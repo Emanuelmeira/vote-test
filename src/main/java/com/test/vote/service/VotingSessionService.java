@@ -31,7 +31,7 @@ public class VotingSessionService {
         this.votingSessionRepository = votingSessionRepository;
     }
 
-    public Page<VotingSession> getPageable(Pageable pageable) {
+    public Page<VotingSession> getPageable(final Pageable pageable) {
         logger.info("Searching for agenda with page");
         return votingSessionRepository.findAll(pageable);
     }

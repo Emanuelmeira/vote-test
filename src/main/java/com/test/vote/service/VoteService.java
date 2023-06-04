@@ -43,12 +43,12 @@ public class VoteService {
         return votingSession;
     }
 
-    public VotingSession validateIfSessionExist(VoteRequest voteRequest) {
+    public VotingSession validateIfSessionExist(final VoteRequest voteRequest) {
         return votingSessionRepository.findById(voteRequest.getIdVotingSession())
                 .orElseThrow( () -> new BadRequestException("Voting session does not exist for id sent."));
     }
 
-    public void validateIfSessionIsOpen(VotingSession votingSession) {
+    public void validateIfSessionIsOpen(final VotingSession votingSession) {
         if(votingSession.getFinishIn().isBefore(LocalDateTime.now())){
             throw new BadRequestException("Agenda closed for voting");
         }

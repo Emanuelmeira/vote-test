@@ -34,7 +34,7 @@ public class AgendaService {
                 .orElseThrow(() -> new BadRequestException("Agenda does not exist for id sent."));
     }
 
-    public Page<Agenda> getPageable(Pageable pageable) {
+    public Page<Agenda> getPageable(final Pageable pageable) {
         logger.info("Searching for agenda with page");
         return agendaRepository.findAll(pageable);
     }
