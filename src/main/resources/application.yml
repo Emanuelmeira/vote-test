@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: vote
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017
+      database: vote
+
+# Swagger configurations
+swaggerBaseUrl: http://localhost:${server.port}
+
+springdoc:
+  packagesToScan: [com.test.vote.controller]
+
